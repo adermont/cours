@@ -40,12 +40,14 @@ ne fait rien :
 On peut modifier le programme pour qu'il affiche dans la console les paramètres 
 de lancement :
 
+```java
 	class MonProgramme {
 		public static void main(String[] args) {
 			System.out.printf("%d%n", Arrays.toString(args))
 		}
 	}
-	
+```
+
 Voyons comment compiler et lancer le programme :
 
 	> javac MonProgramme
