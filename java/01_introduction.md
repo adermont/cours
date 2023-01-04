@@ -27,12 +27,14 @@ est intégré avec le kit de développement.
 Voici un premier programme qui est syntaxiquement minimal et correct, mais qui 
 ne fait rien :
 
+```java
 	class MonProgramme {
 		public static void main(String[] args) {
 			// Ce programme ne fait rien
 		}
 	}
-	
+```
+
 > Exécutez le programme avec la commande `java MonProgramme`
 
 On peut modifier le programme pour qu'il affiche dans la console les paramètres 
