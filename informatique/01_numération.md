@@ -158,39 +158,39 @@ algèbre.
 Voici les 4 opérateurs de la logique booléenne :
 
 >
-| AND     | 0  | 1  |
-| ------- | :-:| -- |
-|  **0**  | 0  | 0  | La sortie est à 1 si seulement si les deux entrées sont à 1.
-|  **1**  | 0  | 1  |
+>| AND     | 0  | 1  |
+>| ------- | :-:| -- |
+>|  **0**  | 0  | 0  | La sortie est à 1 si seulement si les deux entrées sont à 1.
+>|  **1**  | 0  | 1  |
 
 >| OR      | 0  | 1  |
-| ------- | :-:| -- |
-|  **0**  | 0  | 1  | La sortie est à 1 à partir du moment où au moins une entrée est à 1.
-|  **1**  | 1  | 1  |
+>| ------- | :-:| -- |
+>|  **0**  | 0  | 1  | La sortie est à 1 à partir du moment où au moins une entrée est à 1.
+>|  **1**  | 1  | 1  |
 
 >| XOR     | 0  | 1  |
-| ------- | :-:| -- |
-|  **0**  | 0  | 1  | La sortie n'est à 1 que si une et une seule entrée est à 1.
-|  **1**  | 1  | 0  |
+>| ------- | :-:| -- |
+>|  **0**  | 0  | 1  | La sortie n'est à 1 que si une et une seule entrée est à 1.
+>|  **1**  | 1  | 0  |
 
 >| NOT     | 0  | 1  |
-| ------- | :-:| -- |
-|         | 1  | 0  | La sortie est l'inverse de l'entrée.
+>| ------- | :-:| -- |
+>|         | 1  | 0  | La sortie est l'inverse de l'entrée.
 
 
 On peut appliquer ces opérateurs sur des nombres binaires :
 
->OR          | | | | |
-            |-|-|-|-|
-Opérande A :|1|0|0|1|
-Opérande B :|0|1|1|1|
-Résultat :  |1|1|1|1|
+>|OR          | | | | |
+>|-           |-|-|-|-|
+>|Opérande A :|1|0|0|1|
+>|Opérande B :|0|1|1|1|
+>|Résultat :  |1|1|1|1|
 
->XOR         | | | | |
-            |-|-|-|-|
-Opérande A :|1|0|0|1|
-Opérande B :|1|1|1|1|
-Résultat :  |0|1|1|0|
+>|XOR         | | | | |
+>|-           |-|-|-|-|
+>|Opérande A :|1|0|0|1|
+>|Opérande B :|1|1|1|1|
+>|Résultat :  |0|1|1|0|
 
 
 
