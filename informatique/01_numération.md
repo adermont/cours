@@ -29,9 +29,9 @@ représentation en base 2, 10 ou 16 sont indépendantes.**
 
 > Exemple pour la valeur 42 :
 >
-> Décomposition en puissances de 2  : 42 = 32 (1x2<sup>5</sup>) + 8 (1x2<sup>3</sup>) + 2 (1x2<sup>0</sup>) = **100101**
+> Décomposition en puissances de 2  : 42 = 32 (1x2<sup>5</sup>) + 8 (1x2<sup>3</sup>) + 2 (1x2<sup>1</sup>) = **101010**
 >
-> Décomposition en puissances de 16 : 42 = 32 (2x16<sup>1</sup> + 12x16<sup>0</sup>) = **2C**
+> Décomposition en puissances de 16 : 42 = 32 (2x16<sup>1</sup> + 10x16<sup>0</sup>) = **2A**
 
 Inversement, l'interprétation d'un nombre exprimé en binaire ou en hexadécimal 
 se déroule comme suit :
