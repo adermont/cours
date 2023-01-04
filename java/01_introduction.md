@@ -43,7 +43,7 @@ de lancement :
 ```java
 	class MonProgramme {
 		public static void main(String[] args) {
-			System.out.printf("%d%n", Arrays.toString(args))
+			System.out.printf("%d%n", Arrays.toString(args));
 		}
 	}
 ```
