@@ -36,7 +36,7 @@ représentation en base 2, 10 ou 16 sont indépendantes.**
 Inversement, l'interprétation d'un nombre exprimé en binaire ou en hexadécimal 
 se déroule comme suit :
 
-10001011 = 1x2^7^ + 1x2<sup>3</sup> + 1x2<sup>1</sup> + 1x2<sup>0</sup> = 128 + 8 + 2 + 1 = **139**
+10001011 = 1x2<sup>7</sup> + 1x2<sup>3</sup> + 1x2<sup>1</sup> + 1x2<sup>0</sup> = 128 + 8 + 2 + 1 = **139**
 
 5F = 5x16<sup>1</sup> + 16x16<sup>0</sup>= 80 + 15 = **95**
 
