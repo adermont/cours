@@ -59,9 +59,9 @@ Sortie affichée dans la console :
 
 ## Résumé
 
-a) Un programme java doit respecter une syntaxe
-b) Un programme java doit être compilé pour pouvoir être exécuté
-c) Un programme peut être lancé dans la console avec des arguments séparés par des espaces
-d) L'affichage par défaut d'un programme se fait dans la sortie standard de la console
-e) L'entité minimale du langage s'appelle une *classe* et elle est composée de méthodes
-f) Pour utiliser du code développé par des tiers, il faut l'importer
+1. Un programme java doit respecter une syntaxe
+2. Un programme java doit être compilé pour pouvoir être exécuté
+3. Un programme peut être lancé dans la console avec des arguments séparés par des espaces
+4. L'affichage par défaut d'un programme se fait dans la sortie standard de la console
+5. L'entité minimale du langage s'appelle une *classe* et elle est composée de méthodes
+6. Pour utiliser du code développé par des tiers, il faut l'importer
