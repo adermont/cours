@@ -17,7 +17,7 @@ centaines = rang 2...)
 
 On peut ainsi décomposer le nombre 394 comme suit :
 
-394 = **3** x 10^2^ + **9** x 10^1^ + **4** x 10^0^
+394 = **3** x 10<sup>2</sup> + **9** x 10<sup>1</sup> + **4** x 10<sup>0</sup>
 
 
 ## Binaire (base 2) et hexadécimal (base 16)
@@ -29,16 +29,16 @@ représentation en base 2, 10 ou 16 sont indépendantes.**
 
 > Exemple pour la valeur 42 :
 >
-> Décomposition en puissances de 2  : 42 = 32 (1x2^5^) + 8 (1x2^3^) + 2 (1x2^0^) = **100101**
+> Décomposition en puissances de 2  : 42 = 32 (1x2<sup>5</sup>) + 8 (1x2<sup>3</sup>) + 2 (1x2<sup>0</sup>) = **100101**
 >
-> Décomposition en puissances de 16 : 42 = 32 (2x16^1^ + 12x16^0^) = **2C**
+> Décomposition en puissances de 16 : 42 = 32 (2x16<sup>1</sup> + 12x16<sup>0</sup>) = **2C**
 
 Inversement, l'interprétation d'un nombre exprimé en binaire ou en hexadécimal 
 se déroule comme suit :
 
-10001011 = 1x2^7^ + 1x2^3^ + 1x2^1^ + 1x2^0^ = 128 + 8 + 2 + 1 = **139**
+10001011 = 1x2^7^ + 1x2<sup>3</sup> + 1x2<sup>1</sup> + 1x2<sup>0</sup> = 128 + 8 + 2 + 1 = **139**
 
-5F = 5x16^1^ + 16x16^0^ = 80 + 15 = **95**
+5F = 5x16<sup>1</sup> + 16x16<sup>0</sup>= 80 + 15 = **95**
 
 
 
@@ -59,10 +59,10 @@ Coder l'information c'est donner un sens "humainement compréhensible" à des no
 et donc aux octets qui encodent ces nombres.
 
 Un octet étant composé de 8 bits, le nombre entier maximum qui peut s'exprimer sur 8 bits
-est 2^7^+2^6^+2^5^+2^4^+2^3^+2^2^+2^1^+2^0^ = 255.
+est 2<sup>7</sup> + 2<sup>6</sup> + 2<sup>5</sup> + 2<sup>4</sup> + 2<sup>3</sup> + 2<sup>2</sup> + 2<sup>1</sup> + 2<sup>0</sup> = 255.
 
 La valeur d'un octet varie donc de 0 à 255, ce qui donne 256 valeurs possibles. En hexa, 
-la valeur d'un octet varie de 00 à FF.
+la valeur d'un octet varie de `00` à `FF`.
 
 Très souvent on dira qu'un groupe d'octets est un **mot* (désigné par le mot-clé "WORD" 
 ou parfois "DWORD" dans certains langages comme le C). On peut ainsi trouver des mots de 
@@ -77,13 +77,13 @@ grands nombres.
 Par convention, on utilise le MSB pour encoder le signe d'un nombre.
 Le premier bit désignera donc le signe (négatif s'il est à 1 et positif sinon) et le reste 
 servira à exprimer la valeur. Le poids du premier bit "utile" d'un nombre signé
-sur 1 octet sera donc 2^6^ et non pas 2^7^.
+sur 1 octet sera donc 2<sup>6</sup> et non pas 2<sup>7</sup>.
 
 Un nombre entier signé codé sur 1 octet va de -128 à 127.
 
 Le plus petit nombre est 10000000 : le 1 signifie "nombre négatif" et la valeur est ... -128 !
 Il faut bien comprendre que les nombres négatifs s'expriment dans l'ordre croissant
-en partant du plus petit (-128~10~ ou 10000000~2~) au plus grand (-1~10~ ou 11111111~2~).
+en partant du plus petit (-128<sub>10</sub> ou 10000000<sub>2</sub>) au plus grand (-1<sub>10</sub> ou 11111111<sub>2</sub>).
 
 Trouver la valeur d'un nombre signé négatif n'est pas intuitif, il y a des règles.
 Il faut réaliser le complément à 1 puis le complément à 2.
@@ -96,13 +96,13 @@ Le calcul se fait en deux étapes :
 
 > Exemple  : comment écrire –4 en binaire ou en hexadécimal ? 
 >
-> +4 = 0000 0100~2~
+> +4 = 0000 0100<sub>2</sub>
 >
-> Le complément à 1 de ce code est 1111 1011~2~
+> Le complément à 1 de ce code est 1111 1011<sub>2</sub>
 >
 > Ajoutons 1 pour obtenir son complément à 2 :
 >
-> 1111 1011~2~ + 1 = 1111 1100~2~ = FC~16~ = -4
+> 1111 1011<sub>2</sub> + 1 = 1111 1100<sub>2</sub> = FC<sub>16</sub> = -4
 
 
 ## Comment sont exprimés les nombres réels ?
@@ -112,9 +112,9 @@ ce n'est jamais qu'un entier multiplié par une puissance de 10.
 
 Le codage de l'information en norme IEEE 754 fait donc comme suit : 
 
-1 bit | 8 bits | 23 bits
--|-|-|
-Signe | Exposant | Mantisse
+| 1 bit | 8 bits   | 23 bits |
+| ----- | -------- | ------- |
+| Signe | Exposant | Mantisse|
 
 > **ATTENTION** :
 >
@@ -135,10 +135,10 @@ Contrairement aux multiples en base 10, en binaire les multiples sont exprimés 
 puissances de 2 également. Par exemple un kilo-octets ce n'est pas 1000 octets 
 mais 2^10^ octets, soit **1024** octets.
 
-- 1 ko = 2^10^ octets = 1 024 octets
-- 1 Mo = 1 048 576 octets = 2^20^ octets
-- 1 Go = 1 073 741 824 octets = 2^30^ octets
-- 1 To = 1 099 511 627 776 octets = 2^40^ octets
+- 1 ko = 2<sup>10</sup> octets = 1 024 octets
+- 1 Mo = 1 048 576 octets = 2<sup>20</sup> octets
+- 1 Go = 1 073 741 824 octets = 2<sup>30</sup> octets
+- 1 To = 1 099 511 627 776 octets = 2<sup>40</sup> octets
 
 
 ## Algèbre booléenne
@@ -157,7 +157,8 @@ algèbre.
 
 Voici les 4 opérateurs de la logique booléenne :
 
->| AND     | 0  | 1  |
+>
+| AND     | 0  | 1  |
 | ------- | :-:| -- |
 |  **0**  | 0  | 0  | La sortie est à 1 si seulement si les deux entrées sont à 1.
 |  **1**  | 0  | 1  |
