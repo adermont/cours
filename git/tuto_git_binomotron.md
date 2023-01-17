@@ -12,9 +12,9 @@ Dans la ligne de commande, tapez les commandes suivantes (ne pas saisir le
 caractère `$` qui est en début de ligne, il symbolise juste le _prompt_ de la 
 ligne de commande) :
 
->`git config --global user.name "Prenom NOM"`
->`git config --global user.email votreemail@example.com`
->`git config --global core.autocrlf true`
+>`git config --global user.name "Prenom NOM"`  
+>`git config --global user.email votreemail@example.com`  
+>`git config --global core.autocrlf true`  
 
 ________________________________________________________________________________
 ### 1.1. Créer un nouveau repository sur GitHub
@@ -60,11 +60,11 @@ hébergé sur le site [GitHub](https://www.github.com).
 >- Prenez la version SSH si vous pensez participer au projet,
 >
 >- Sinon prenez la version HTTPS si vous voulez simplement télécharger le code 
-pour le lire sans jamais publier sur le repo GitHub)
+pour le lire sans jamais publier sur le repo GitHub
 >
 >![Cloner un reporisoty GitHub](img/github_clone_ssh.png "Cloner un repository GitHub")
 
-> \#Une fois l'URL copiée, tapez cette commande dans un terminal :
+> Une fois l'URL copiée, tapez cette commande dans un terminal :  
 >`git clone git@github.com:$VOTRE_LOGIN$/binomotron.git`
 
 La commande va télécharger le contenu du référentiel et le mettre dans le 
@@ -76,12 +76,12 @@ ________________________________________________________________________________
 
 Cette suite de commandes vous permet d'initialiser un **répertoire local** de 
 votre disque dur pour qu'il devienne synchronisé avec votre _repository_ distant 
-**'binomotron'** (ou binomo<b><u>==n==</u></b>tron selon les versions) :
+**'binomotron'** (ou binomo<b><u>n</u></b>tron selon les versions) :
 
 > \# Activation/Initialisation de GIT dans le répertoire courant :<br/>
 > `git init`
 
-> \# On spécifie l'URL du _repository_ distant et on lui donne un nom local : <br/>
+> \# On spécifie l'URL du _repository_ distant et on lui donne un nom local (remplacez $VOTRE_LOGIN$) : <br/>
 > `git remote add binomotron git@github.com:$VOTRE_LOGIN$/binomotron</b>.git -m main -f`
 
 > \# [Optionnel] On se synchronise avec le _repository_ distant : <br/>
@@ -174,12 +174,12 @@ commandes suivantes :
 > de lignes est différent sur les deux systèmes d'exploitation).
 > 
 > Pour désactiver ces warnings :
->`PS D:\Java\binomotron>git config core.autocrlf true`
+>`PS D:\Java\binomotron>git config --global core.autocrlf true`
 
 Nous sommes prêts pour publier/archiver nos modifications avec `commit` !
 
 ________________________________________________________________________________
-### 3. L'étape du ==_commit_==
+### 3. L'étape du _commit_
 
 La publication de modifications est aussi appelée archivage mais la plupart du
 temps on dira simplement "_commit_ nos modifs" ou "faire un _commit_".
@@ -204,7 +204,7 @@ Changes to be committed:
         new file:   src/Main.java
 ```
 
-> \# Si tout est ok (pas de conflit), faire un commit en intégrant un message court :
+> \# Si tout est ok, faire un commit en intégrant un message court :
 >`PS D:\Java\binomotron> git commit -m "V1 du binomotron"`
 
 Résultat :
@@ -231,10 +231,10 @@ nothing to commit, working tree clean
 1. Si c'est une nouvelle fonctionnalité, on marquera le résumé de la fonction 
 qu'on a développée (ex.: `git commit -m "Algorithme de création de binômes aléatoires"`)
 
-2.  Si c'est une correction de bug et que votre bug il faut impérativement 
-mentionner le numéro du bug (celui du Bug Tracker de votre entreprise/projet) 
-précédé du mot-clé ==FIX== ou ==BUGFIX== (ex.: 
-`git commit -m "BUG 0000521: taille de groupe négative"`)
+2.  Si c'est une correction de bug et que votre bug est répertorié dans un 
+BugTracker, il faut impérativement mentionner le numéro du bug (celui du 
+BugTracker de votre entreprise/projet) précédé du mot-clé **FIX** ou **BUGFIX** 
+(ex.: `git commit -m "BUG 0000521: taille de groupe négative"`)
 
 3. Si c'est la correction d'une coquille dans le commit précédent qui n'a pas
 encore été publié dans le repository distant **(ET UNIQUEMENT DANS CE CAS)**, 
@@ -242,7 +242,7 @@ mieux vaut **amender** le commit précédent
 (ex.: `git commit --amend --no-edit` )
 
 ________________________________________________________________________________
-### 4. L'étape du ==_push_==
+### 4. L'étape du _push_
 
 Reprenons la métaphore de l'avion :
 
@@ -252,7 +252,7 @@ Reprenons la métaphore de l'avion :
 - [ ] **git push = l'avion décole, arrive à destination et les passagers débarquent**
 
 Lorsque vous voulez partager toutes vos modifications (ie. potentiellement 
-plusieurs commits) avec votre team, il faut les publier dans votre _repository_.
+plusieurs commits) avec votre équipe, il faut les publier dans le _repository_.
 
 Dans un terminal, lancez les commandes suivantes :
 
