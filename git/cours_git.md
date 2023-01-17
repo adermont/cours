@@ -126,36 +126,6 @@ fonctionnalités expérimentales :
 
 [![](https://mermaid.ink/img/pako:eNqVU11rwjAU_SvhDslLkSSN1eZ5oAPflD2Mwri2aS32Q2oqc8X_vlSns6hMWwrt-bjnXEgbCMtIg4Jer0mL1CjSEJqVyVRvdUYVoZFe1Al1CDVLnesjEmOdGUpO4DtWKS4yvbFsExSkc9EkNay1vcQxMsaoc0vBfxVxPLijEGcFMhoUe2LvXu-otPS4wvXy7AuXOlyVtSE5psUfWuZ5akgaKRLAlgdwhxEXzKLCIlySWKOpK82vE66Zziz3MuWBVvKW_iqj20rcdYg7KYMnW3kPtep6hv9m5LpK9HnMyTcKgBhM2vfpfPYpmHAZb7HdWisyeRtPpvaZP72z_-TOnLUGcMDWtLLI_iOHwx3A4dAH0KoirFatbG91WJtytitCUKaqtQP1OkKjX1NMKsxBxZhtLLrG4qMsO9-gGvgCNeR9XwjXLjziPuNy4MAOlOCi78mRGHqMj9yBK-Xege_DBN7nnss9KbnvSi4tvf8BuAUX9w?type=png)](https://mermaid.live/edit#pako:eNqVU11rwjAU_SvhDslLkSSN1eZ5oAPflD2Mwri2aS32Q2oqc8X_vlSns6hMWwrt-bjnXEgbCMtIg4Jer0mL1CjSEJqVyVRvdUYVoZFe1Al1CDVLnesjEmOdGUpO4DtWKS4yvbFsExSkc9EkNay1vcQxMsaoc0vBfxVxPLijEGcFMhoUe2LvXu-otPS4wvXy7AuXOlyVtSE5psUfWuZ5akgaKRLAlgdwhxEXzKLCIlySWKOpK82vE66Zziz3MuWBVvKW_iqj20rcdYg7KYMnW3kPtep6hv9m5LpK9HnMyTcKgBhM2vfpfPYpmHAZb7HdWisyeRtPpvaZP72z_-TOnLUGcMDWtLLI_iOHwx3A4dAH0KoirFatbG91WJtytitCUKaqtQP1OkKjX1NMKsxBxZhtLLrG4qMsO9-gGvgCNeR9XwjXLjziPuNy4MAOlOCi78mRGHqMj9yBK-Xege_DBN7nnss9KbnvSi4tvf8BuAUX9w)
 
-```mermaid
-%%{init: { 'theme': 'default' , 'themeVariables': {
-              'git0': '#ffa000',
-              'git1': '#ffff50',
-              'git2': '#ffffa0'
-} } }%%
-gitGraph
-    checkout main
-    commit id: "v1"
-    commit id: "v2"
-    branch feature1
-    checkout feature1
-    commit id: "v3"
-    checkout main
-    commit id: "v4"
-    checkout feature1
-    branch feature2
-    checkout feature2
-    commit id: "v5"
-    checkout main
-    commit id: "v6"
-    checkout feature1
-    commit id: "v7"
-    checkout main
-    merge feature1 id: "v8" tag: "LTS_202301" type: NORMAL
-    checkout feature2
-    commit id: "v9"
-    checkout main
-    commit id: "v10"
-```
 
 - On voit sur ce graphe que la branche `feature1` démarre à partir de la 
 version `v2` de la branche `main`. La branche `feature2` démarre elle-même
