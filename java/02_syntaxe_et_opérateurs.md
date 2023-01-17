@@ -4,8 +4,8 @@ La syntaxe d'un langage est régie par ce qu'on appelle sa **grammaire**. Ce son
 les règles qui disent quels mots on peut utiliser et dans quel ordre, comme une 
 langue vivante.
 
-La grammaire du langage Java est disponible à cette
-[adresse](https://docs.oracle.com/javase/specs/jls/se7/html/jls-18.html) 
+La version 19 des spécifications du langage Java est disponible à cette
+[adresse](https://docs.oracle.com/javase/specs/jls/se19/html/index.html) 
 pour celles et ceux qui sont curieux de voir comment s'exprime la grammaire d'un 
 langage de programmation.
 
@@ -17,11 +17,13 @@ grammaire du langage ciblé. C'est ce que ce va faire un **parseur** (*parser*
 en anglais).
 
 En Java, un fichier valide contient au moins la déclaration d'une classe qui a 
-pour nom le même nom que le fichier où elle est déclarée.
+pour nom le **même nom que le fichier où elle est déclarée**.
 
-<ClassDeclaraction> ::= [<Modifier>] class <Texte> '{' [<Instructions>] }
-<Modifier> ::= {}
-
+>```
+> ClassDeclaraction ::= [<Modifier>] class <Name> '{' [<Instructions>] '}'
+> Modifier ::= public | protected | private | <Default>
+> Default ::= <empty string>
+>```
 
 
 ## Les commentaires standards (privés)
@@ -36,37 +38,35 @@ s'il s'agit de commentaires de type `javadoc`.
 Exemples :
 
 ```java
- // Ceci est une ligne de commentaire, tout caractère suivant le '//' est
- // interprété comme un commentaire. Le signe de début de commentaire doit être 
- // répété à chaque ligne.
+ // Ceci est un commentaire "ligne".
+ // Le signe de début de commentaire doit être répété à chaque ligne.
+ //
+ int i = 0; // On peut ajouter un commentaire ligne après une instruction mais pas avant.
  
- int i = 0; // On peut insérer un commentaire après une expression.
- 
- /* Le code entre les balises '/*' et '*/' est un commentaire. */
+ /* Le code entre les balises '/*' et '*/' est un commentaire "bloc". */
 
-  int i = /* on peut même commenter à l'intérieur du code */ 2 + 4 + 8 + 16;
+  int i = /* on peut mettre un commentaire-bloc à l'intérieur d'une expression */ 2 + 4 + 8 + 16;
 
- /* On peut même écrire un commentaire 
+ /* On peut aussi écrire un commentaire bloc
    sur plusieurs lignes.
  */
 ```
 
 ## Les commentaires javadoc (publics)
 
-Un commentaire public est destiné à être vu par les utilisateurs de notre 
-programme. En Java, le kit de développement contient un utilitaire qui s'appelle
+En Java, le kit de développement contient un utilitaire qui s'appelle
 `javadoc` et qui permet de générer des fichier HTML à partir des commentaires
-publics trouvés dans notre code. Ceci permet d'harmoniser le look de la 
+javadoc trouvés dans notre code. Ceci permet d'harmoniser le look de la 
 documentation des API écrits en Java.
 
-Tout commentaire encadré par `/**` et `*/` est un commentaire public qui sera
-interprété par l'utilitaire `javadoc` mais ignoré par le compilateur.
+Tout commentaire encadré par `/**` et `*/` est un commentaire javadoc qui sera
+interprété par l'utilitaire `javadoc` mais ignoré par le compilateur. Cependant
+vous devez savoir que `javadoc` ne lira QUE les commentaires accolés à des 
+membres publics. D'autre part il faut apprendre la syntaxe de ces commentaires 
+car on ne peut pas écrire n'importe quoi n'importe où.
 
-La 1ère phrase doit être concise et doit obligatoirement se terminer par un 
-point (`.`).
-
-Exemple : 
-
+Exemple : la 1ère phrase doit être concise et doit obligatoirement se terminer par un 
+point (`.`)
 ```java
  /** 
   * Cette classe permet de réaliser des calculs simples. La fonction 
@@ -84,15 +84,13 @@ Exemple :
 	 public static int additionne(int nombre1, int nombre2) {
 		return nombre1 + nombre2;
 	 }
-	 
-	 ...
 ```
 
-Documentation sur l'utilitaire `javadoc` : [https://docs.oracle.com/javase/8/docs/technotes/tools/windows/javadoc.html](https://docs.oracle.com/javase/8/docs/technotes/tools/windows/javadoc.html)
+- [Spécification des tags javadoc](https://docs.oracle.com/en/java/javase/19/docs/specs/javadoc/doc-comment-spec.html)
 
+- [Documentation sur l'utilitaire `javadoc`](https://docs.oracle.com/en/java/javase/19/docs/specs/man/javadoc.html)
 
-Exemple de fichier produit par la commande `javadoc` : [https://docs.oracle.com/en/java/javase/19/docs/api/java.base/java/lang/System.html](https://docs.oracle.com/en/java/javase/19/docs/api/java.base/java/lang/System.html)
-
+- [Exemple de fichier produit par la commande `javadoc`](https://docs.oracle.com/en/java/javase/19/docs/api/java.base/java/lang/System.html)
 
 
 
@@ -101,7 +99,7 @@ Exemple de fichier produit par la commande `javadoc` : [https://docs.oracle.com/
 Pour stocker des valeurs (des nombres, du texte ou des références), on utilise
 des variables. C'est un moyen plus pratique que d'utiliser des adresses de la 
 mémoire, car **les variables ont un nom** alors que les adresses sont des 
-nombres parfois très grands.
+nombres parfois très grands. 
 
 Lorsqu'une variable est déclarée avec le mot-clé `final`, on dit que c'est une 
 **constante**. Au cours du programme, la valeur d'une variable peut évoluer 
@@ -114,7 +112,8 @@ tandis que la valeur d'une constante, elle, reste **fixe**.
 
 Les variables et les constantes ont un **type** qui détermine les opérations 
 qu'on peut réaliser dessus. Ainsi les opérations `+` ou `-` ne sont possibles 
-qu'entre 2 variables de type numérique (`int`, `short`, `byte`, `long`...)
+qu'entre 2 variables de type numérique (`int`, `short`, `byte`, `long`...) ou
+deux chaines de caractères (`String`).
 
 Il n'existe que 2 familles de variables/constantes : 
 
@@ -135,12 +134,9 @@ Les types de variables dits "primitifs" sont les suivants :
 | `boolean`| booléen vallant 'vrai' ou 'faux'                            |
 | `String` | chaîne de caractères                                        |
 
-**Remarque** : la JVM, c'est à dire la machine virtuelle qui interprète votre 
-code, est une machine 32 bits. Elle manipule uniquement des zones mémoire de 32 
-bits. Par conséquent, les opérations sur des types de données 64 bits sont 
-délicates car il faut manipuler les données en 2 temps. D'autre part il faut 
-noter que même si vous déclarez une variable avec le type "byte" (8bits), la JVM
-va utiliser 32 bits au lieu de 8 (les 24 bits qui sont inutiles sont à zéro).
+**Remarque** : la JVM manipule les données par paquets de 32 bits. Les types qui
+sont stockés sur 64 bits doivent être utilisés avec précaution en contexte 
+multithread à l'aide des classes `AtomicDouble`, `AtomicLong`...
 
 Les autres types de variables/constantes sont des **objets** (nous verrons ce 
 concept plus tard).
@@ -153,7 +149,7 @@ Exemples :
 ```java
 	// Variables :
 	int a = 1;
-	byte b = 0xFF
+	byte b = 0xFF;
 	a = 5;
 	char c = 'a';
 	String urlIsen = "http://www.isen.fr";
@@ -166,9 +162,7 @@ Exemples :
 ```
 
 
-
 ## Pour approfondir :
 
-- Les types de données :  [https://web.maths.unsw.edu.au/~lafaye/CCM/java/javatype.htm](https://web.maths.unsw.edu.au/~lafaye/CCM/java/javatype.htm)
+- [Guide "débuter en Java"](https://www.data-transitionnumerique.com/apprenez-programmation-java)
 
-- Les variables :  [https://web.maths.unsw.edu.au/~lafaye/CCM/java/javavar.htm](https://web.maths.unsw.edu.au/~lafaye/CCM/java/javavar.htm)
