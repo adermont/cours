@@ -46,6 +46,7 @@ classe.
 
 Voici un premier programme qui est syntaxiquement minimal et correct, mais qui 
 ne fait rien :
+
 ```java
 public class MonProgramme {
 	public static void main(String[] args) {
@@ -87,3 +88,4 @@ b) Pour être exécuté, un programme doit déclarer une classe avec une méthod
 c) Un programme peut être lancé dans la console avec des arguments séparés par 
 des espaces.
 d) L'affichage par défaut d'un programme se fait dans la console.
+
