@@ -81,7 +81,8 @@ votre disque dur pour qu'il devienne synchronisé avec votre _repository_ distan
 > \# Activation/Initialisation de GIT dans le répertoire courant :<br/>
 > `git init`
 
-> \# On spécifie l'URL du _repository_ distant et on lui donne un nom local (remplacez $VOTRE_LOGIN$) : <br/>
+> \# On spécifie l'URL du _repository_ distant et on lui donne un nom local 
+> (remplacez `$VOTRE_LOGIN$` par votre login ^^) : <br/>
 > `git remote add binomotron git@github.com:$VOTRE_LOGIN$/binomotron</b>.git -m main -f`
 
 > \# [Optionnel] On se synchronise avec le _repository_ distant : <br/>

@@ -142,7 +142,7 @@ continue son développement.
 
 ## Travail à faire :
 
-- Suivez le tutoriel [Configuration_git.pdf](https://github.com/adermont/cours/blob/main/git/Configuration_git.pdf)
+- Suivez le tutoriel [configuration_git.pdf](https://github.com/adermont/cours/blob/main/git/configuration_git.pdf)
   pour installer Git sur votre machine et configurer SSH si ce n'est pas déjà fait.
 
 - Suivez le tutoriel [Travailler avec GitHub](tuto_git_binomotron.md) pour publier 
