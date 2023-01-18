@@ -142,10 +142,14 @@ continue son développement.
 
 ## Travail à faire :
 
-- Suivez le tutoriel [Travailler avec GitHub](tuto_git_binomotron.md) pour publier 
-votre projet "Binomotron" dans votre repository GitHub.
+- Suivez le tutoriel [Configuration_git.pdf](https://github.com/adermont/cours/blob/main/git/Configuration_git.pdf)
+  pour installer Git sur votre machine et configurer SSH si ce n'est pas déjà fait.
 
-- Formez-vous avec "Git it!" si possible ou une alternative :
+- Suivez le tutoriel [Travailler avec GitHub](tuto_git_binomotron.md) pour publier 
+votre projet "Binomotron" dans votre repository GitHub (ou pour synchroniser votre
+repository avec votre dossier de projet local).
+
+- Formez-vous (avec "Git it!" de préférence, il est bien pensé) :
 
    - [Git it!](https://github.com/jlord/git-it-electron) (tutos en anglais 
    + traduction en français, contient des commandes à taper dans un Terminal)
