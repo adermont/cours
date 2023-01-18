@@ -140,16 +140,17 @@ continue son développement.
 
 
 
-## Travail en binôme :
+## Travail à faire :
 
 - Suivez le tutoriel [Travailler avec GitHub](tuto_git_binomotron.md) pour publier 
 votre projet "Binomotron" dans votre repository GitHub.
 
-- Formez-vous :
+- Formez-vous avec "Git it!" si possible ou une alternative :
 
-   - avec [Oh my Git!](https://ohmygit.org) (Jeu vidéo (en anglais) pour 
-   apprendre Git de manière ludique)
+   - [Git it!](https://github.com/jlord/git-it-electron) (tutos en anglais 
+   + traduction en français, contient des commandes à taper dans un Terminal)
  
-   - puis avec [Git-Katas](https://github.com/eficode-academy/git-katas).
-Lisez le README, clonez le repository et faites les opérations demandées en 
-ligne de commande sur votre machine.
+   - ou sinon [Git-Katas](https://github.com/eficode-academy/git-katas) (tutos en 
+   anglais, contient des commandes à taper dans un Terminal)
+   
+   - ou encore [Oh my Git!](https://ohmygit.org) (format jeu vidéo, en anglais)
