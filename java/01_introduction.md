@@ -82,10 +82,10 @@ Sortie affichée dans la console :
 ## Résumé
 
 a) Un programme java doit respecter une syntaxe et doit être compilé en fichier 
-`.class` pour pouvoir être exécuté.
+`.class` pour pouvoir être exécuté.  
 b) Pour être exécuté, un programme doit déclarer une classe avec une méthode 
-`public static void main(String[] args){}`.
+`public static void main(String[] args){}`.  
 c) Un programme peut être lancé dans la console avec des arguments séparés par 
-des espaces.
-d) L'affichage par défaut d'un programme se fait dans la console.
+des espaces.  
+d) L'affichage par défaut d'un programme se fait dans la console.  
 
