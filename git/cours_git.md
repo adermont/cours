@@ -158,3 +158,5 @@ repository avec votre dossier de projet local).
    anglais, contient des commandes à taper dans un Terminal)
    
    - ou encore [Oh my Git!](https://ohmygit.org) (format jeu vidéo, en anglais)
+
+- Lisez [Git avec IntelliJ](https://www.jetbrains.com/idea/guide/tutorials/creating-a-project-from-github/)
