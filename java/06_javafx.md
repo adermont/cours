@@ -252,3 +252,7 @@ public void start(Stage stage) throws IOException
 	stage.show();
 }
 ```
+
+## Pour aller plus loin
+
+- [Initiation à Swing avec des tutoriels vidéos](https://koor.fr/Java/TutorialSwing/Index.wp)
