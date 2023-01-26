@@ -26,21 +26,72 @@ Dans IntelliJ, ouvrez le volet "Terminal" (View > Tools > Terminal) :
 
 ![View > Tools > Terminal](img/intellij-menu-view-terminal.png)
 
-Créez un fichier d'exemple `Classe.java` dans le dossier `src`.
-
-Puis tapez la commande suivante en remplaçant $NOM_DE_LA_CLASSE$ par le nom de 
-la classe pour laquelle vous voulez générer la documentation :
-> `$ javadoc -d javadoc src/$NOM_DE_LA_CLASSE$.java`
->
 > **Note** : ne tapez jamais le premier caractère `$` au début d'une ligne de 
-> commande car il s'agit d'une marqueur qui symbolise le "prompt" de votre 
-> terminal.
+> commande. Il s'agit d'une convention qu'on utilise pour indiquer qu'il
+> s'agit d'une commande à taper dans un Terminal mais il ne fait pas partie 
+> de la commande à taper.
 
-Si la commande a bien fonctionné, vous verez un nouveau dossier `javadoc` créé
+### Etape 1 : vérifications
+
+Vérifiez que votre variable d'environnement `Path` contient bien le chemin
+complet vers le dossier `bin` de votre JDK :
+
+> `$ echo $env:path`
+
+**Exemple de résultat attendu :**
+
+C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;
+C:\WINDOWS\System32\OpenSSH\;
+C:\Program Files\Git\cmd;
+**D:\Java\openjdk-18.0.1.1_windows-x64_bin\jdk-18.0.1.1\bin;**
+C:\Program Files\JetBrains\IntelliJ IDEA 2022.3.1\bin;
+
+Si vous ne voyez pas votre répertoire JDK, éditez votre variable d'environnement
+PATH pour y ajouter le chemin vers votre JDK.
+
+- Pour aller plus vite, recopiez cette commande dans votre Terminal :
+
+- >`$ rundll32 sysdm.cpl,EditEnvironmentVariables`
+
+- Vous allez voir cette fenêtre :
+
+   ![Variables d'environnement](img/screen-env-variables.png)
+
+- Sélectionnez la variable `Path`, cliquez sur `Modifier` et ajoutez le chemin
+complet vers votre JDK (recopiez bien tout le chemin jusqu'au dossier `bin` de 
+votre JDK !)
+
+- **Relancez ensuite IntelliJ.**
+
+- Puis tapez la commande suivante pour vérifier que la commande `javadoc` est 
+maintenant accessible :
+
+> `$ javadoc --version`  
+>
+> `> javadoc 18.0.0.1`
+
+### Etape 2 : générer la doc des classes au format HTML avec `javadoc`
+
+- Lorsque la commande `javadoc` fonctionne, relancez-la comme ci-après pour 
+générer toute la documentation de votre projet courant :
+
+   > `$ javadoc -d javadoc src/*`
+   >
+   > **Note** : L'option `-d` sert à indiquer le répertoire dans lequel vous 
+   souhaitez générer les fichiers HTML. Le caractère `*` est un caractère joker 
+   qui signifie "n'importe quelle chaine de caractères". Comme ce qui est 
+   attendu est un nom de fichier, la commande prendra en compte tous les 
+   fichiers qui sont dans le répertoire `src`.
+
+- Si la commande a bien fonctionné, vous verez un nouveau dossier `javadoc` créé
 par la commande précédente. Il contient toute l'arborescence des fichiers HTML
 pour documenter votre classe.
 
-Vous pouvez également utiliser le menu `Tools > Generate javadoc ...` :  
+- Affichez le fichier `javadoc/index.html` dans votre navigateur (clic droit
+sur le fichier puis `Open in > Browser > Default`).
+
+- Vous pouvez également utiliser le menu `Tools > Generate javadoc ...` :  
+
 ![Menu Tools > Generate javadoc...](img/intellij-menu-tools-javadoc.png)  
 
 ![Generate javadoc...](img/intellij-fenetre-javadoc.png)
@@ -48,7 +99,7 @@ Vous pouvez également utiliser le menu `Tools > Generate javadoc ...` :
 Voyons maintenant que mettre dans vos commentaires pour bien documenter vos 
 classes !
 
-## Les règles générales
+## Les règles générales pour écrire des commentaires Javadoc
 
 1. Un commentaire `javadoc` commence par `/**` et se termine par `*/`.
 
@@ -68,12 +119,16 @@ doit être placé juste avant la ligne de déclaration de la classe :
 	public class MyClass { ...
 	```
 
-4. Pour documenter une constante **publique** de la classe, idem :
+   Pour documenter une constante **publique** de la classe, idem :
 
 	```java
 	/** Ce commentaire décrit à quoi servira la constante. */
 	public static final int MA_CONSTANTE = 42;
 	```
+4. On ne peut documenter que des classes, des méthodes ou des variables membres
+d'une classe. Les commentaires Javadoc écrits à l'intérieur d'une méthode sont
+ignorés car le rôle de la javadoc est simplement de décrire le **contrat 
+d'interface** entre votre classe et les utilisateurs de votre classe.
 
 5. L'outil `javadoc` traite tout ce qui se trouve entre le tag et le premier 
 caractère point '.' comme un **résumé** de l'élément que vous documentez. Donc
@@ -88,26 +143,37 @@ de finir votre phrase par un point :
 	 * bizarres, il faut prévenir l'utilisateur. Il est aussi important de bien 
 	 * mettre des exemples d'utilisation lorsque la méthode fait beaucoup de 
 	 * choses pour aider à sa compréhension.
-	 *
-	 * <TAGS> (rdv au chapitre suivant !)
+	 * <p>
+	 * N'oubliez pas que vous avez le droit de mettre en forme votre texte
+	 * en HTML ! Par conséquent les caractères inférieur "&lt;" et supérieur
+	 * "&gt;" sont interdits sauf pour écrire des balises HTML valides.
+	 * </p>
+	 * <pre>
+	 * // Vous pouvez même mettre des exemples de code pour décrire comment 
+	 * // utiliser votre méthode :)
+	 * String s = myMethod();
+	 * 
+	 * <ET ICI VOUS METTEZ LES TAGS JAVADOC> (rdv au chapitre suivant !)
 	 */
-	public MyClass myMethod() { ...
+	public String myMethod() { ...
 	```
 	
-	Regardez ce que produit la documentation du résumé de la méthode 
-	`Integer.toBinaryString()` :  
+	Regardez comment apparaît la méthode `Integer.toBinaryString()` dans la 
+	section "Method summary" de la [documentation officielle](https://docs.oracle.com/en/java/javase/19/docs/api/java.base/java/lang/Integer.html) :
+	
 	![Résumé de Integer.toBinaryString()](img/javadoc-integer-tobinstring-complete.png)
 	
-	Et la documentation complète de la même méthode :  
+	Et voici maintenant la même méthode mais dans la section "Method details" :  
+	
 	![Doc complète de Integer.toBinaryString()](img/javadoc-integer-tobinstring.png)
 
 
 ## Les tags javadoc
 
 Un tag javadoc est une balise qui commence par un `@` et est suivie par une 
-valeur. Il existe des tags qui se mettent dans les entêtes de fichiers pour 
-documenter le package, des tags prévus pour documenter la classe, des tags pour 
-documenter les paramètres des méthodes ...etc.
+valeur. Il existe des tags qui se mettent dans les commentaires d'entête des 
+fichiers pour documenter le package, des tags prévus pour documenter la classe, 
+des tags pour documenter les paramètres des méthodes ...etc.
 
 ```java
 /**
@@ -122,9 +188,9 @@ documenter les paramètres des méthodes ...etc.
 
 | Tag          | Description                                             |
 |--------------|---------------------------------------------------------|
-| @version     | Décrit la date de création du fichier ou sa version.    |
-| @author      | Décrit le nom de l'auteur de la classe.                 |
-| @see         | Décrit une classe en lien avec la nôtre et qui peut aider à sa compréhension.|
+| `@version`     | Décrit la date de création du fichier ou sa version.    |
+| `@author`      | Décrit le nom de l'auteur de la classe.                 |
+| `@see`         | Décrit une classe en lien avec la nôtre et qui peut aider à sa compréhension.|
 
 Exemple :
 
@@ -145,8 +211,8 @@ Les commentaires les plus importants sont ceux des méthodes de votre classe.
 
 | Tag              | Description                                        |
 |------------------|----------------------------------------------------|
-| @param \<nom\>   | Décrit un paramètre attendu par la méthode.        |
-| @return          | Décrit ce que retourne la méthode.                 |
+| `@param <nom>`   | Décrit un paramètre attendu par la méthode.        |
+| `@return`        | Décrit ce que retourne la méthode.                 |
 
 Exemple :
 
