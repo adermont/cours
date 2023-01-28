@@ -36,7 +36,11 @@ Dans IntelliJ, ouvrez le volet "Terminal" (View > Tools > Terminal) :
 Vérifiez que votre variable d'environnement `Path` contient bien le chemin
 complet vers le dossier `bin` de votre JDK :
 
+> Terminal en version **PowerShell** :
 > `$ echo $env:path`
+
+> Terminal en version **Invite de commandes** :
+> `$ echo %path%`
 
 **Exemple de résultat attendu :**
 
@@ -51,7 +55,7 @@ PATH pour y ajouter le chemin vers votre JDK.
 
 - Pour aller plus vite, recopiez cette commande dans votre Terminal :
 
-- >`$ rundll32 sysdm.cpl,EditEnvironmentVariables`
+   >`$ rundll32 sysdm.cpl,EditEnvironmentVariables`
 
 - Vous allez voir cette fenêtre :
 
