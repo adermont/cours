@@ -109,7 +109,7 @@ Exemple :
 	int result = 0;
 	
 	// Pour chaque élément 'n' du tableau 'numbers'
-	for (n : numbers) 
+	for (int n : numbers) 
 	// Faire :
 	{
 		if (n == 30) {
