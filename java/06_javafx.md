@@ -34,6 +34,11 @@ Swing. C'est un système assez puissant basé sur AWT mais parfois trop techniqu
 explicitement ou bien lorsque vous devrez réaliser des choses qui sortent
 vraiment de l'ordinaire. 
 
+Pour votre culture, voici des liens pour apprendre Swing si vous en avez besoin 
+un jour :
+
+- [Tutoriels vidéos sur Swing](https://koor.fr/Java/TutorialSwing/Index.wp)
+
 JavaFX est donc plus simple à prendre en mains, plus cohérent également, mais
 il ne faut pas pour autant oublier Swing (et lui-même repose sur AWT).
 Par expérience, vous verrez qu'on ne peut parfois pas faire certaines choses
@@ -255,4 +260,3 @@ public void start(Stage stage) throws IOException
 
 ## Pour aller plus loin
 
-- [Initiation à Swing avec des tutoriels vidéos](https://koor.fr/Java/TutorialSwing/Index.wp)
