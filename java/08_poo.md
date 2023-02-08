@@ -15,10 +15,11 @@ Une définition simple de la POO vous est donnée
 
 La POO s'articule autour de 4 concepts fondamentaux que nous détaillerons plus loin :
 
-- L'identité
-- L'encapsulation
-- Le polymorphisme
-- L'envoi de messages
+1. L'identité
+2. L'encapsulation
+3. L'envoi de messages
+4. L'héritage et le polymorphisme
+
 
 ## Les notions de classe et d'objet
 
