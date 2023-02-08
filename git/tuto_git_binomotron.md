@@ -12,9 +12,9 @@ Dans la ligne de commande, tapez les commandes suivantes (ne pas saisir le
 caractère `$` qui est en début de ligne, il symbolise juste le _prompt_ de la 
 ligne de commande) :
 
->`git config --global user.name "Prenom NOM"`  
->`git config --global user.email votreemail@example.com`  
->`git config --global core.autocrlf true`  
+>`$ git config --global user.name "Prenom NOM"`  
+>`$ git config --global user.email votreemail@example.com`  
+>`$ git config --global core.autocrlf true`  
 
 ________________________________________________________________________________
 ### 1.1. Créer un nouveau repository sur GitHub
@@ -65,7 +65,7 @@ pour le lire sans jamais publier sur le repo GitHub
 >![Cloner un reporisoty GitHub](img/github_clone_ssh.png "Cloner un repository GitHub")
 
 > Une fois l'URL copiée, tapez cette commande dans un terminal :  
->`git clone git@github.com:$VOTRE_LOGIN$/binomotron.git`
+>`$ git clone git@github.com:$VOTRE_LOGIN$/binomotron.git`
 
 La commande va télécharger le contenu du référentiel et le mettre dans le 
 répertoire courant.
@@ -78,18 +78,18 @@ Cette suite de commandes vous permet d'initialiser un **répertoire local** de
 votre disque dur pour qu'il devienne synchronisé avec votre _repository_ distant 
 **'binomotron'** (ou binomo<b><u>n</u></b>tron selon les versions) :
 
-> \# Activation/Initialisation de GIT dans le répertoire courant :<br/>
-> `git init`
+> \# Commencez par vous placer dans le répertoire de votre projet (remplacez \<votre_répertoire_de_projet\> par la bonne valeur):  
+> `$ cd <votre_répertoire_de_projet>`
+
+> \# Activation/Initialisation de GIT dans le répertoire courant :  
+> `$ git init`
 
 > \# On spécifie l'URL du _repository_ distant et on lui donne un nom local 
-> (remplacez `$VOTRE_LOGIN$` par votre login ^^) : <br/>
-> `git remote add binomotron git@github.com:$VOTRE_LOGIN$/binomotron</b>.git -m main -f`
+> (remplacez `$VOTRE_LOGIN$` par votre login ^^) :  
+> `$ git remote add origin git@github.com:$VOTRE_LOGIN$/binomotron</b>.git -m main -f`
 
-> \# [Optionnel] On se synchronise avec le _repository_ distant : <br/>
-> `git fetch binomotron`
-
-> \# On **télécharge** les dernières modifications de la branche `main` : <br/>
-> `git pull binomotron main`
+> \# On **télécharge** les dernières modifications de la branche `main` :  
+> `$ git pull`
 
 Initialement, votre projet **local** ressemble à ceci :
 
@@ -144,8 +144,6 @@ commandes suivantes :
 >```
 
 >\# Simulons l'ajout de tous les fichiers et répertoires du répertoire courant :
-> `git add . -n`
-
 >```
 >PS D:\Java\binomotron> git add . -n
 >add '.gitignore'
@@ -230,17 +228,17 @@ nothing to commit, working tree clean
 **IMPORTANT** :
 
 1. Si c'est une nouvelle fonctionnalité, on marquera le résumé de la fonction 
-qu'on a développée (ex.: `git commit -m "Algorithme de création de binômes aléatoires"`)
+qu'on a développée (ex.: `$ git commit -m "Algorithme de création de binômes aléatoires"`)
 
 2.  Si c'est une correction de bug et que votre bug est répertorié dans un 
 BugTracker, il faut impérativement mentionner le numéro du bug (celui du 
 BugTracker de votre entreprise/projet) précédé du mot-clé **FIX** ou **BUGFIX** 
-(ex.: `git commit -m "BUG 0000521: taille de groupe négative"`)
+(ex.: `$ git commit -m "BUG 0000521: taille de groupe négative"`)
 
 3. Si c'est la correction d'une coquille dans le commit précédent qui n'a pas
 encore été publié dans le repository distant **(ET UNIQUEMENT DANS CE CAS)**, 
 mieux vaut **amender** le commit précédent
-(ex.: `git commit --amend --no-edit` )
+(ex.: `$ git commit --amend --no-edit` )
 
 ________________________________________________________________________________
 ### 4. L'étape du _push_
@@ -258,9 +256,8 @@ plusieurs commits) avec votre équipe, il faut les publier dans le _repository_.
 Dans un terminal, lancez les commandes suivantes :
 
 >\#Push de la branche "main" dans le _repository_ distant ("binomotron" est notre 
-alias local du _repository_ distant du même nom) :
->
->`PS D:\Java\binomotron>git push binomotron main`
+alias local du _repository_ distant du même nom) :  
+>`$ git push binomotron main`
 
 Résultat : 
 ```
@@ -279,12 +276,15 @@ To github.com:<$VOTRE_LOGIN$>/binomotron.git
 ________________________________________________________________________________
 ### 5. Les étapes _Fetch_ et _Pull_
 
-La commande `git fetch binomotron` vous permettra de voir si des modifications
-ont été publiées par d'autres utilisateurs. Elle ne modifie pas l'état de votre
-copie locale.
+La commande `$ git fetch` ne modifie pas l'état de votre copie locale mais télécharge
+les informations sur le travail que les autres utilisateurs du référentiel ont publié.
 
-La commande `git pull binomotron` va récupérer les dernières modifications 
-sur le serveur et met à jour votre copie locale du référentiel. Si des conflits
+La commande `$ git pull` va récupérer les dernières modifications 
+sur le serveur et **met à jour votre copie locale du référentiel**. Si des conflits
 sont identifiés (c'est à dire que vous avez fait des modifications sur les mêmes
-lignes d'un fichier que votre collègue) la commande `git pull` échouera et vous
-devrez d'abord résoudre vos conflits manuellement pour vous mettre à jour.
+lignes d'un fichier que votre collègue) la commande `$ git pull` échouera et vous
+devrez résoudre vos conflits manuellement pour vous mettre à jour.
+
+Ntez qu'il est assez courant d'avoir des conflits quand 2 personnes travaillent 
+sur le même fichier. Il faut donc apprendre à les résoudre.
+
