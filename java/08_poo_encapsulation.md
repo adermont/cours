@@ -42,7 +42,7 @@ créer un objet de type `AdressePostale` :
 >       // après son nom :
 >       System.out.println(myObject.codePostal); // Au début ce sera 0 !
 >
->       // Maintenant on modifie la variable 'someVariable'
+>       // Maintenant on modifie la variable 'codePostal'
 >       myObject.codePostal = 29200;
 >
 >       // On affiche la nouvelle valeur après modification

@@ -131,6 +131,7 @@ System.out.println(hello);
 
 > Le caractère point '.' en Java signifie donc **ENVOI DE MESSAGE** et il est 
 > <span style="color: red">**TOUJOURS**</span> précédé **soit d'un nom de 
-> variable, soit d'un nom de classe.**
+> variable, d'une expression qui retourne un résultat (un appel de fonction
+> par exemple, ou d'un nom de classe.**
 
 ## [Chapitre suivant : L'héritage](08_poo_heritage.md)
