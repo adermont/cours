@@ -94,13 +94,15 @@ fonction de votre futur programme donc donnez un nom de fonction à chaque étap
 
 1. Présenter une liste de produits à l'utilisateur
 
-   1.1. `getConnection()`
-   1.2. `getAllProduits()`
-   1.3. `displayProduits()`
+   1.1. `getConnection()`  
+   1.2. `getAllProduits()`  
+   1.3. `displayProduits()`  
 	
 Mais comme vous le savez, ce n'est pas encore suffisant pour déclarer une fonction.
 Il vous faut déterminer quels sont leurs TYPES DE RETOUR et leurs PARAMETRES.
 
+<ol><ol>
+<li>
 1.1. Pour se connecter à la base de données, il faut utiliser la méthode 
    DriverManager.getConnection(url,user,password). Donc votre méthode getConnection()
    devra prendre en paramètre l'URL de la BDD ainsi que le login/password 
@@ -109,19 +111,22 @@ Il vous faut déterminer quels sont leurs TYPES DE RETOUR et leurs PARAMETRES.
    une connexion de type java.sql.Connection.
    
 > `public java.sql.Connection getConnection(String url, String login, String password)`
-		  
+</li>
+<li>		  
 1.2. Pour obtenir la liste des produits, il n'y a pas besoin de paramètres
    puisqu'on est capable d'écrire la requête SQL à exécuter sans avoir 
    besoin d'infos supplémentaires : "SELECT \* FROM produits".
    Le type de retour sera une liste d'objets de classe "Produit".
    
 > `public List\<Produit\> getProduits()`
-		  
-1.3. Pour afficher vos produits, votre fonction a besoin de prendre en paramètre 
+</li>
+<li>1.3. Pour afficher vos produits, votre fonction a besoin de prendre en paramètre 
    la liste des produits à afficher. Par contre, aucun type de retour car la 
    fonction n'a rien à calculer, on veut juste qu'elle fasse un affichage dans 
    la console.
-   
+</li>
+</ol></ol>
+
 > `public void displayProduits()`
 
 ## 5. Bien séparer les responsabilités
