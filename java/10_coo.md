@@ -65,7 +65,8 @@ les données. Pour faire cette étape, partez de vos user stories et détaillez 
 	
 En partant de cette liste assez générale, demandez-vous comment :
 
-1. Présenter une liste de produits à l'utilisateur ?  
+1. Présenter une liste de produits à l'utilisateur ?
+
    1.1. Se connecter à la base de données  
    1.2. Exécuter une requêtes SQL pour obtenir la liste des produits  
    1.3. Afficher les produits à l'utilisateur  
@@ -75,6 +76,7 @@ possible vos étapes jusqu'à obtenir une phrase que vous saurez coder de maniè
 évidente. Dans mon exemple ci-dessus, toutes les étapes sont maintenant évidentes :
 
 1. Présenter une liste de produits à l'utilisateur
+
    1.1. Ce sont les classes Database et MySqlDatabase qui permettent 
    d'initialiser le driver et d'ouvrir des connexions.  
 
@@ -91,6 +93,7 @@ pour en faire un squelette de code, il n'y a qu'un pas : chaque étape est une
 fonction de votre futur programme donc donnez un nom de fonction à chaque étape.
 
 1. Présenter une liste de produits à l'utilisateur
+
    1.1. `getConnection()`
    1.2. `getAllProduits()`
    1.3. `displayProduits()`
