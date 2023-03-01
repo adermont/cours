@@ -18,17 +18,17 @@ naturelle.
 
 Etudiez vos User Stories avec attention pour essayer de déterminer 
 quelles sont les données sur lesquelles vous allez devoir travailler. Relevez 
-les noms (au sens grammatical) et les verbent qui reviennent souvent : Client, 
+les noms (au sens grammatical) et les verbes qui reviennent souvent : Client, 
 Achète, Produit, Fournisseur, Livraison, Commande, Facture ...etc.
 
-Les noms se transforment souvent en tables de la base de données et en classes 
-Java, tandis que les verbes se transformeront en liens entre vos classes ou en
-méthodes Java.
+Les **noms** se transforment souvent en **tables** de la base de données et en 
+**classes** Java, tandis que les **verbes** se transformeront en **liens** entre 
+vos classes ou en méthodes Java.
 
 ## 2. Modèle de données
 
 Ensuite vous faites un brainstorming avec vos collègues dans le but de sortir 
-un MPD (modèle physique de données), c'est à dire le diagramme relationnel MySQL 
+un MPD (modèle physique de données), c'est à dire le diagramme relationnel `MySQL`
 avec les relations entre vos tables, les clés primaires, étrangères et les index.
 
 ## 3. Diagramme de classes du domaine
@@ -38,7 +38,8 @@ C'est ce qu'on appelle le MCD ou Modèle Conceptuel de Données. Sur ce diagramm
 on devrait voir une classe par table de la BDD, sauf pour les tables de liens 
 qui sont formalisées autrement. Les tables de liens doivent être modélisées sous 
 forme d'un lien entre deux classes où chaque extrémité du lien comporte une 
-cardinalité (aussi appelée "multiplicité").
+cardinalité (aussi appelée "multiplicité") et le nom du lien sera souvent un 
+verbe.
 
 Par exemple pour Produit, Client et Commande vous ne modélisez que Produit et 
 Client puis vous les reliez par un lien "commande >" allant de Client vers Produit
