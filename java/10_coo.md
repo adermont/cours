@@ -57,69 +57,69 @@ C'est la partie la plus compliquée : imaginer quels sont les traitements à fai
 les données. Pour faire cette étape, partez de vos user stories et détaillez chaque
 étape progressivement. Par exemple pour un site e-commerce : 
 
-	1. Le cient parcourt la liste des produits
-	2. Il clique sur le bouton "Ajouter au panier"
-	3. Il valide son panier pour passer commande
-	4. Il saisit ses identifiants
-	5. Il valide le paiement
+   1. Le cient parcourt la liste des produits
+   2. Il clique sur le bouton "Ajouter au panier"
+   3. Il valide son panier pour passer commande
+   4. Il saisit ses identifiants
+   5. Il valide le paiement
 	
 En partant de cette liste assez générale, demandez-vous comment :
 
-	1. Présenter une liste de produits à l'utilisateur ?
-	==> 1.1 Se connecter à la base de données
-	==> 1.2 Exécuter une requêtes SQL pour obtenir la liste des produits
-	==> 1.3 Afficher les produit à l'utilisateur
+   1. Présenter une liste de produits à l'utilisateur ?
+      1.1 Se connecter à la base de données
+      1.2 Exécuter une requêtes SQL pour obtenir la liste des produits
+      1.3 Afficher les produits à l'utilisateur
 	
 Faites ceci pour chaque étape de votre processus et continuez à décomposer le plus
 possible vos étapes jusqu'à obtenir une phrase que vous saurez coder de manière 
 évidente. Dans mon exemple ci-dessus, toutes les étapes sont maintenant évidentes :
 
-	1.1 : C'est les classes Database et MySqlDatabase qui permettent  
-		  d'initialiser le driver et d'ouvrir des connexions.
+   1.1 : Ce sont les classes Database et MySqlDatabase qui permettent 
+   d'initialiser le driver et d'ouvrir des connexions.
 		  
-	1.2 : Méthode Connection.createStatement() pour créer une interaction avec 
-		  la BDD puis Statement.executeQuery("...") pour exécuter une requête 
-		  SQL. Faire le mapping objet-relationnel en créant des objets de type 
-		  Produit à partir de l'objet ResultSet.
+   1.2 : Méthode `Connection.createStatement()` pour créer une interaction avec 
+   la BDD puis `Statement.executeQuery("...")` pour exécuter une requête 
+   SQL. Faire le mapping objet-relationnel en créant des objets de type 
+   Produit à partir de l'objet ResultSet.
 		  
-	1.3	: Affichage console avec System.out.println() pour chaque produit 
-		  retourné par l'étape précédente.
+   1.3	: Affichage console avec `System.out.println()` pour chaque produit 
+   retourné par l'étape précédente.
 		  
 Vous obtenez ainsi le squelette de votre application, sous forme textuelle. Mais 
 pour en faire un squelette de code, il n'y a qu'un pas : chaque étape est une 
 fonction de votre futur programme donc donnez un nom de fonction à chaque étape.
 
-	1.1 : getConnection()
+   1.1 : `getConnection()`
 	
-	1.2 : getAllProduits()
+   1.2 : `getAllProduits()`
 	
-	1.3 : displayProduits()
+   1.3 : `displayProduits()`
 	
 Mais comme vous le savez, ce n'est pas encore suffisant pour déclarer une fonction.
 Il vous faut déterminer quels sont leurs TYPES DE RETOUR et leurs PARAMETRES.
 
-	1.1 : Pour se connecter à la base de données, il faut utiliser la méthode 
-		  DriverManager.getConnection(url,user,password). Donc votre méthode getConnection()
-		  devra prendre en paramètre l'URL de la BDD ainsi que le login/password 
-		  d'un utilisateur autorisé à accéder à cette BDD. D'autre part son type 
-		  de retour sera le même que DriverManager.getConnection(), c'est à dire 
-		  une connexion de type java.sql.Connection.
+   1.1 : Pour se connecter à la base de données, il faut utiliser la méthode 
+   DriverManager.getConnection(url,user,password). Donc votre méthode getConnection()
+   devra prendre en paramètre l'URL de la BDD ainsi que le login/password 
+   d'un utilisateur autorisé à accéder à cette BDD. D'autre part son type 
+   de retour sera le même que DriverManager.getConnection(), c'est à dire 
+   une connexion de type java.sql.Connection.
+   
+   `public java.sql.Connection getConnection(String url, String login, String password)`
 		  
-		  public java.sql.Connection getConnection(String url, String login, String password)
+   1.2	: Pour obtenir la liste des produits, il n'y a pas besoin de paramètres
+   puisqu'on est capable d'écrire la requête SQL à exécuter sans avoir 
+   besoin d'infos supplémentaires : "SELECT \* FROM produits".
+   Le type de retour sera une liste d'objets de classe "Produit".
+   
+   `public List\<Produit\> getProduits()`
 		  
-	1.2	: Pour obtenir la liste des produits, il n'y a pas besoin de paramètres
-		  puisqu'on est capable d'écrire la requête SQL à exécuter sans avoir 
-		  besoin d'infos supplémentaires : "SELECT * FROM produits".
-		  Le type de retour sera une liste d'objets de classe "Produit".
-		  
-		  public List<Produit> getProduits()
-		  
-	1.3 : Pour afficher vos produits, votre fonction a besoin de prendre en paramètre 
-		  la liste des produits à afficher. Par contre, aucun type de retour car la 
-		  fonction n'a rien à calculer, on veut juste qu'elle fasse un affichage dans 
-		  la console.
-	
-		  public void displayProduits()
+   1.3 : Pour afficher vos produits, votre fonction a besoin de prendre en paramètre 
+   la liste des produits à afficher. Par contre, aucun type de retour car la 
+   fonction n'a rien à calculer, on veut juste qu'elle fasse un affichage dans 
+   la console.
+   
+   `public void displayProduits()`
 
 ## 5. Bien séparer les responsabilités
 
