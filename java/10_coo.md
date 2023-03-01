@@ -75,33 +75,43 @@ Faites ceci pour chaque étape de votre processus et continuez à décomposer le
 possible vos étapes jusqu'à obtenir une phrase que vous saurez coder de manière 
 évidente. Dans mon exemple ci-dessus, toutes les étapes sont maintenant évidentes :
 
-1. Présenter une liste de produits à l'utilisateur
-
+<ul><ul>
+<li>
    1.1. Ce sont les classes Database et MySqlDatabase qui permettent 
    d'initialiser le driver et d'ouvrir des connexions.  
-
+</li>
+<li>
    1.2. Méthode `Connection.createStatement()` pour créer une interaction avec 
    la BDD puis `Statement.executeQuery("...")` pour exécuter une requête 
    SQL. Faire le mapping objet-relationnel en créant des objets de type 
    Produit à partir de l'objet ResultSet.  
-
+</li>
+<li>
    1.3. Affichage console avec `System.out.println()` pour chaque produit 
    retourné par l'étape précédente.
-		  
+</li>
+</ul></ul>
+
 Vous obtenez ainsi le squelette de votre application, sous forme textuelle. Mais 
 pour en faire un squelette de code, il n'y a qu'un pas : chaque étape est une 
 fonction de votre futur programme donc donnez un nom de fonction à chaque étape.
 
-1. Présenter une liste de produits à l'utilisateur
+<ul><ul>
+<li>
+   1.1. `getConnection()`
+</li>
+<li>
+   1.2. `getAllProduits()`
+</li>
+<li>
+   1.3. `displayProduits()`
+</li>
+</ul></ul>
 
-   1.1. `getConnection()`  
-   1.2. `getAllProduits()`  
-   1.3. `displayProduits()`  
-	
 Mais comme vous le savez, ce n'est pas encore suffisant pour déclarer une fonction.
 Il vous faut déterminer quels sont leurs TYPES DE RETOUR et leurs PARAMETRES.
 
-<ol><ol>
+<ul><ul>
 <li>
 1.1. Pour se connecter à la base de données, il faut utiliser la méthode 
    DriverManager.getConnection(url,user,password). Donc votre méthode getConnection()
@@ -124,10 +134,10 @@ Il vous faut déterminer quels sont leurs TYPES DE RETOUR et leurs PARAMETRES.
    la liste des produits à afficher. Par contre, aucun type de retour car la 
    fonction n'a rien à calculer, on veut juste qu'elle fasse un affichage dans 
    la console.
-</li>
-</ol></ol>
-
+   
 > `public void displayProduits()`
+</li>
+</ul></ul>
 
 ## 5. Bien séparer les responsabilités
 
