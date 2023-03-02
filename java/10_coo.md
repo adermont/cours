@@ -79,19 +79,21 @@ près) :
 
 <ul><ul>
 <li>
-   1.1. La connexion se fait avec les classes `Database` et `MySqlDatabase` qui 
-   permettent d'initialiser le driver MySQL et d'ouvrir des connexions.
+   1.1. La connexion se fait avec les classes <code>Database</code> et 
+   <code>MySqlDatabase</code> qui permettent d'initialiser le driver MySQL 
+   et d'ouvrir des connexions.
 </li>
 <li>
-   1.2. La méthode `Connection.createStatement()` permet de créer une 
-   interaction avec la BDD puis `Statement.executeQuery("...")` permet 
+   1.2. La méthode <code>Connection.createStatement()</code> permet de créer une 
+   interaction avec la BDD puis <code>Statement.executeQuery("...")</code> permet 
    d'exécuter une requête SQL. Ensuite il faut faire le 
-   **mapping objet-relationnel** en créant des objets de type `Produit` à partir 
-   d'un objet `ResultSet` en appelant les méthodes `ResultSet.getInt()`, 
-   `ResultSet.getString()`...etc.
+   <strong>mapping objet-relationnel</strong> en créant des objets de type 
+   <code>Produit</code> à partir d'un objet <code>ResultSet</code> en appelant 
+   les méthodes <code>ResultSet.getInt()</code>, 
+   <code>ResultSet.getString()</code>...etc.
 </li>
 <li>
-   1.3. L'affichage dans la console se fait avec `System.out.println()` pour 
+   1.3. L'affichage dans la console se fait avec <code>System.out.println()</code> pour 
    chaque produit retourné par l'étape précédente.
 </li>
 </ul></ul>
@@ -104,36 +106,36 @@ nom de fonction à chaque étape.
 
 <ul><ul>
 <li>
-   1.1. `getConnection()`
+   1.1. <code>getConnection()</code>
 </li>
 <li>
-   1.2. `getAllProduits()`
+   1.2. <code>getAllProduits()</code>
 </li>
 <li>
-   1.3. `displayProduits()`
+   1.3. <code>displayProduits()</code>
 </li>
 </ul></ul>
 
 Mais comme vous le savez, ce n'est pas suffisant. Il nous manque des 
 informations pour déclarer nos fonctions en Java. Vous devez déterminer quels 
-sont leurs **TYPES DE RETOUR** et leurs **PARAMETRES**.
+sont leurs <strong>TYPES DE RETOUR</strong> et leurs <strong>PARAMETRES</strong>.
 
 Reprenons notre exemple :
 <ul><ul>
 <li>
 1.1. Pour se connecter à la base de données, il faut utiliser la méthode 
-   `DriverManager.getConnection(url,user,password)`. Donc votre méthode 
-   `getConnection()` devra prendre en paramètre l'URL de la BDD ainsi que le 
+   <code>DriverManager.getConnection(url,user,password)</code>. Donc votre méthode 
+   <code>getConnection()</code> devra prendre en paramètre l'URL de la BDD ainsi que le 
    login/password d'un utilisateur autorisé à accéder à cette BDD. D'autre part 
-   son type de retour sera le même que `DriverManager.getConnection()`, c'est à 
-   dire une connexion de type `java.sql.Connection`.
+   son type de retour sera le même que <code>DriverManager.getConnection()</code>, c'est à 
+   dire une connexion de type <code>java.sql.Connection</code>.
    
 > `public java.sql.Connection getConnection(String url, String login, String password)`
 </li>
 <li>		  
 1.2. Pour obtenir la liste des produits, il n'y a pas besoin de paramètres
    puisqu'on est capable d'écrire la requête SQL à exécuter sans avoir 
-   besoin d'infos supplémentaires : "SELECT \* FROM produits".
+   besoin d'infos supplémentaires : "<code>SELECT * FROM produits</code>".
    Le type de retour sera une liste d'objets de classe "Produit".
    
 > `public List\<Produit\> getProduits()`
