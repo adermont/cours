@@ -50,7 +50,7 @@ Il existe 2 façons de déclarer un script dans une page HTML :
 </script>
 
 </body>
-<html>
+</html>
 ```
 
 ## Débuter facilement
