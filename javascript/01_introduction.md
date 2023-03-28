@@ -1,5 +1,7 @@
 # JavaScript / ECMAScript
 
+<iframe width="1275" height="717" src="https://www.youtube.com/embed/vFjM_w9o9hc" title="Introduction au Javascript" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 Le JavaScript (ou plus précisément ECMAScript) est un langage de programmation
 **objet, avec un typage faible (basé sur des prototypes) et interprété** :
 
