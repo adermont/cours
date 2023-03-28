@@ -1,5 +1,7 @@
 # JavaScript / ECMAScript
 
+[![Video](https://img.youtube.com/vi/vFjM_w9o9hc/0.jpg)](https://youtu.be/vFjM_w9o9hc)
+
 Le JavaScript (ou plus précisément ECMAScript) est un langage de programmation
 **objet, avec un typage faible (basé sur des prototypes) et interprété** :
 
