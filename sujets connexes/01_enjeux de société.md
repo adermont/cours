@@ -40,6 +40,12 @@ abordées, il faut intégrer sa démarche de conception dans un cadre écorespon
 Des recommandations ont été émises dans ce sens par l'Etat :
 https://ecoresponsable.numerique.gouv.fr/publications/ecoconception-securite/
 
+## Les recommandations RGAA
+
+Règles d'accessibilité = inclusion ! Le non-respect de ces règles entraîne de facto l'exclusion
+d'un ensemble d'utilisateurs. Sous-titres dans les vidéos par exemple, balise "alt" dans les 
+images...etc
+
 
 ## Impacts de la technologie dans les relations sociales
 
