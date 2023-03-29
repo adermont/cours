@@ -276,9 +276,8 @@ john.bonjour();
 
 ### Quid des classes ?
 
-Les classes sont possibles en JavaScript depuis peu de temps donc il n'est pas
-forcément conseillé d'en écrire pour le moment tant que tous les navigateurs du
-marché n'ont pas encore pris en charge ce concept correctement.
+Les classes sont possibles en JavaScript mais on entre dans des fonctionnalités 
+avancées. P¨lus d'infos sur les classes [ici](https://grafikart.fr/tutoriels/class-2061)
 
 ## Pour aller plus loin
 
