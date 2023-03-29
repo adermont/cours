@@ -241,10 +241,10 @@ let c = somme(40, 5);
 /**
  * Calcule la somme de 2 variables.
  *
- * @param iOperande1 : int - Premier opérande
- * @param iOperande2 : int - Second opérande
+ * @param {number} iOperande1 : Premier opérande
+ * @param {number} iOperande2 : Second opérande
  *
- * @return int - La somme de 'iOperande1' + 'iOperande2'.
+ * @return {number} - La somme de 'iOperande1' + 'iOperande2'.
  */
 function somme(iOperande1, iOperande2) {
     return iOperande1 + iOperande2;
